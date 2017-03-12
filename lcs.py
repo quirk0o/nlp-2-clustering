@@ -8,13 +8,7 @@ def longest_common_substring(word_a, word_b):
     if min(len_a, len_b) == 0:
         return 0
 
-    lcs = np.empty([len_a + 1, len_b + 1])
-
-    for i in xrange(0, len_a + 1):
-        lcs[i][0] = 0
-
-    for j in xrange(0, len_b + 1):
-        lcs[0][j] = 0
+    lcs = np.zeros([len_a + 1, len_b + 1])
 
     max_len = 0
     for i, a in enumerate(word_a, start=1):
